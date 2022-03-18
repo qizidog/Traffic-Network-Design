@@ -6,6 +6,16 @@ The main repositories used in this assignment are as follows,
 - [GeneticAlgorithmsWithPython](https://github.com/handcraftsman/GeneticAlgorithmsWithPython) is used to solve the Traffic assignment problem ——  solve User Equilibrium using F-W algorithm 
 - [geatpy](https://github.com/geatpy-dev/geatpy) is used to calculate the optimal value of the upper objective function
 
+The version of `geatpy` I use is updated as follow:
+
+```bash
+(base) [user@host Traffic-Network-Design (master ✗)]$ conda list geatpy
+# packages in environment at /Users/user/miniforge3:
+#
+# Name                    Version                   Build  Channel
+geatpy                    2.7.0                    pypi_0    pypi
+```
+
 # HOW TO USE
 - Define your network information in class MyNetwork in `Myproblem.py` 
 - Define the upper and lower bounds of the independent variable and the aimFunc in class MyProblem in `Myproblem.py` 
@@ -18,11 +28,4 @@ The main repositories used in this assignment are as follows,
 
 # More Info
 As this is only a homework of my own, I don't want to spend too much time on this document.   
-For more information, please refer to the repositories I cited above. There are few changes to the code.  
-Just one more thing, the following sentence may report errors, because I want to see the current generation and changed some codes in package geatpy.
-```python
-myAlgorithm.showCurGen = True
-```
-You can just Comment it or modify the file `soea_DE_rand_1_bin_templet.py` in geatpy package to print the generation information.  
-The path of `soea_DE_rand_1_bin_templet.py` should be `site-packages\geatpy\templates\soeas\DE\DE_rand_1_bin`  
-The file I have changed is pushed into this repository as well, you can replace the it with original file.
+For more information, please refer to the repositories I cited above.

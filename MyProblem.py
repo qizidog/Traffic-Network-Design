@@ -41,6 +41,9 @@ class MyProblem(ea.Problem):  # 继承Problem父类
         referenceObjV = np.array([[2.5]])
         return referenceObjV
 
+    def report(self):
+        self.net.report()
+
 
 from model import TrafficFlowModel
 '''
@@ -48,6 +51,7 @@ from model import TrafficFlowModel
 '''
 class MyNetwork:
     def __init__(self, sampleNum):
+        self.last_model = None
         self.sampleNum = sampleNum  # 配合遗传算法使用的种群数量
 
         # 定义一些交通网络设计时需要的变量
@@ -115,6 +119,7 @@ class MyNetwork:
 
             # Generate report to console（此处不建议启用）
             # mod.report()
+            self.last_model = mod
 
             # Return the solution if necessary
             flow, link_t, path_t, v_c = mod._formatted_solution()
@@ -130,3 +135,5 @@ class MyNetwork:
         cur_ca = xa+self.Ca
         return cur_ca.tolist()
 
+    def report(self):
+        self.last_model.report()

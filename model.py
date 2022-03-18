@@ -35,10 +35,7 @@ class TrafficFlowModel:
         # computation result
         self.__final_link_flow = None
         self.__iterations_times = None
-        
-        # Set the precision of display, which influences
-        # only the digit of numerical component in arrays
-        np.set_printoptions(precision=4)
+
 
     def __insert_links_in_order(self, links):
         ''' Insert the links as the expected order into the
